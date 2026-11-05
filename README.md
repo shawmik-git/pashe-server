@@ -1,4 +1,7 @@
 # Pashe API
+**Live API:** https://pashe-server.vercel.app
+**Live site:** https://pashe-client.vercel.app
+**Client repo:** https://github.com/shawmik-git/pashe-client
 
 Express + MongoDB server for **Pashe**, a community-service events platform.
 
