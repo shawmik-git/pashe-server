@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { db } from "../db.js";
-import { requireAuth } from "../authMiddleware.js";
+import { requireAuth } from "../middleware.js";
 import { oid } from "../validate.js";
 
 const router = Router();
@@ -14,6 +14,10 @@ router.post("/events/:id/join", requireAuth, async (req, res) => {
   try {
     await d.collection("joins").insertOne({
       eventId: _id,
+      eventTitle: ev.title,
+      eventDate: ev.eventDate,
+      eventLocation: ev.location,
+      eventType: ev.eventType,
       userEmail: req.user.email,
       userName: req.user.name,
       userImage: req.user.image ?? null,
